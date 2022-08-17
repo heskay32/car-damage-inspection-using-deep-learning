@@ -1,0 +1,28 @@
+{% extends 'partials/base2.html' %}
+{% block title %} Results {% endblock %}
+
+
+{% block content %}
+
+<h2>Car Inspection Results:</h2>
+
+<div class="jumbotron">
+	<h4>Car Check:</h4>
+		{{c1_pic}}
+	<h4>Damage Check:</h4>
+		{{c2_pic}}
+	<h4>Damage Location:</h4>
+		{{loc}}
+	<h4>Damage Severity:</h4>
+		{{sev}}
+	<h4>Additional Services:</h4>
+		{{ns|linebreaks}}
+</div>
+
+<div class="bottom">
+	<small>Thanks for using Car Inspection ToolKit</small>
+	<br>
+	<small>Copyright : daramolaolasunkanmi46@gmail.com</small>
+</div>
+
+{% endblock %}

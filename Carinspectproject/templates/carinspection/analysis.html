@@ -1,0 +1,77 @@
+{% extends 'partials/base2.html' %}
+{% block title %} Home {% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+	<div class="row mt-4">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-header bg-info text-white">
+					Bar Plots
+				</div>
+				<div class="card-body">
+					<div class="row">
+						<div class="col-md-4 mb-4">
+							<strong>Damage or not</strong>
+
+							{% load static %}
+							<img src="{% static 'damage.png' %}" alt="damage bar chat" width="340" height="300">
+						</div>
+						<div class="col-md-4 mb-4">
+							<strong>Damage Location</strong>
+
+							{% load static %}
+							<img src="{% static 'location bar.png' %}" alt="damage bar chat" width="350" height="300">
+						</div>
+						<div class="col-md-4 mb-4">
+							<strong>Damage Severity</strong>
+
+							{% load static %}
+							<img src="{% static 'severity bar.png' %}" alt="damage bar chat" width="347" height="300">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row mt-4">
+		<div class="col-md-12">
+			<div class="card">
+				<div class="card-header bg-info text-white">
+					Confusion Matrix
+				</div>
+				<div class="card-body">
+					<div class="row">
+						<div class="col-md-4 mb-4">
+							<strong>Damage or not</strong>
+
+							{% load static %}
+							<img src="{% static 'damagecm.png' %}" alt="damage bar chat" width="340" height="250">
+							Accuracy: 0.91
+						</div>
+						<div class="col-md-4 mb-4">
+							<strong>Damage Location</strong>
+
+							{% load static %}
+							<img src="{% static 'location cm.png' %}" alt="damage bar chat" width="350" height="250">
+							Accuracy: 0.71
+						</div>
+						<div class="col-md-4 mb-4">
+							<strong>Damage Severity</strong>
+
+							{% load static %}
+							<img src="{% static 'severity cm.png' %}" alt="damage bar chat" width="347" height="250">
+							Accuracy: 0.65
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

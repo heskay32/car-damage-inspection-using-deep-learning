@@ -1,0 +1,26 @@
+{% extends 'partials/base.html' %}
+{% block title %} Home {% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="jumbotron text-white">
+			<h1><b>Car</b>Inspect</h1>
+			<small>A Deep Learning based website
+				for car damage inspection.
+			</small>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="center">
+	<a class="btn btn-info" href="{% url 'start' %}">Get Started</a>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+.jumbotron{
+	background: none !important;
+	position: fixed;
+	left: 50px;
+}
+
+.body{
+	background-image: url('./car1.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.bo{
+	background: lightgrey;
+}
+
+.center{
+	margin: 200px;
+	display: flex;
+	justify-content: center;
+}
+
+.bottom{
+	position: fixed;
+	bottom: 0;
+}

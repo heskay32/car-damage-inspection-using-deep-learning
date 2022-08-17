@@ -1,0 +1,90 @@
+{% extends 'partials/base2.html' %}
+{% block title %} Start {% endblock %}
+
+
+{% block content %}
+		<form action="{% url 'start' %}" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+
+		<p> {{ form.non_field_errors }}</p>
+
+		<p>{{ form.imagefile.label_tag }}
+			{{form.imagefile.help_text }}
+		</p>
+
+		<p>{{ form.imagefile.errors }}
+			{{ form.imagefile }}
+		</p>
+
+		<p><input type="submit" name="upload_img" value="Upload"></p>
+		</form>
+
+{% if documents %}
+
+
+<img src="{{ image_path1 }}" alt="" style ="position:absolute;height:350px; top:80px; left:430px; width:550px; border: #000000 6px outset" >
+
+  <div style = "display:inline-block; position:absolute; height:320px; top: 430px ;left:430px; width:550px", id="car_ex">
+
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+ <script type="text/javascript">
+  $(document).ready(function(){
+    $("#image_process").click(function(){
+
+      $('#car_ex').html('<img src="/static/car_run2.gif" width ="300" height="70"> Processing Image, Please Wait...')
+
+      $.ajax({url: "/engine/",
+             type : 'get',
+             success: function(results){
+               $('#car_ex').html(results);
+
+              var div = document.getElementById('car_ex');
+
+              div.innerHTML = div.innerHTML + '<br/>';
+              div.innerHTML = div.innerHTML + "<span style='color: red'>"+"Inspection report:".fontsize(5) ;
+              div.innerHTML = div.innerHTML + '<br/>';
+              div.innerHTML = div.innerHTML + '____________________________________________________________';
+              div.innerHTML = div.innerHTML + '<br/>';
+              div.innerHTML = div.innerHTML + "<span style='color:blue'>"+"<strong>Car Check:<strong/>".fontsize(4) ;
+              div.innerHTML = div.innerHTML +  '  ' + results.c1_pic;
+              div.innerHTML = div.innerHTML + '<br/>';
+              div.innerHTML = div.innerHTML + '____________________________________________________________';
+              div.innerHTML = div.innerHTML + '<br/>';
+              div.innerHTML = div.innerHTML + "<span style='color:blue'>"+"<strong>Damage Check:<strong/>".fontsize(4) ;
+              div.innerHTML = div.innerHTML +  '  ' + results.c2_pic;
+              div.innerHTML = div.innerHTML + '<br/>';
+              div.innerHTML = div.innerHTML + '____________________________________________________________';
+              div.innerHTML = div.innerHTML + '<br/>';
+              div.innerHTML = div.innerHTML + "<span style='color:blue'>"+"<strong>Location:<strong/>".fontsize(4) ;
+              div.innerHTML = div.innerHTML +  '  ' + results.loc;
+              div.innerHTML = div.innerHTML + '<br/>';
+              div.innerHTML = div.innerHTML + '____________________________________________________________';
+              div.innerHTML = div.innerHTML + '<br/>';
+              div.innerHTML = div.innerHTML + "<span style='color:blue'>"+"<strong>Severity:<strong/>".fontsize(4) ;
+              div.innerHTML = div.innerHTML +  '  ' + results.sev;
+              div.innerHTML = div.innerHTML + '<br/>';
+              div.innerHTML = div.innerHTML + '_____________________________________________________________';
+
+
+
+             }
+      });
+    });
+  });
+  </script>
+
+
+
+ <input type="button" value="Click to start Inspection" style="background-color : Yellow; top:3px; height:50px;" id="image_process">
+
+  </div>
+
+
+
+
+{% endif %}
+
+{% endblock %}
