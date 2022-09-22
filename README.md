@@ -59,12 +59,61 @@ Confusion Matrix
 Accuracy: 0.91
 
 ## Explore Jupyter Notebook
-Explore jupyter notebook here
+Explore jupyter notebook [here](https://nbviewer.org/gist/heskay32/e07a5de58945922ac7ee1445ad9776f7)
 
 ## Limitations
+1. Car insurance settlement claims require almost perfect model accuracy to ensure the customer is getting the right service. Such models would required to be trained on large datasets which are highly difficult to obtain.
+2. Running large datasets to ensure maximum accuracy is usualy imposed by hardware restriction. Storing, training and deploying such heavy datasets over the cloud would require expensive architecture aswell.
 
-## Improvement
+## Improvements
+1. Training the classification models on large datasets will improve the accuracy of the models.
+2. The models can be trained using a wider range of dataset featuring different components of cars.
+3. Estimation of cost base on maker, model and year of the car in conjuction with the severity of the car damage. 
+4. The system can be built on the cloud and run remotely to enable users take pictures directly from thier device.
 
 ## Run Locally
+
+Initialize git
+
+```bash
+git init
+```
+
+Clone the project
+
+```bash
+git clone https://github.com/heskay32/car-damage-inspection-using-deep-learning.git
+```
+
+Enter the project directory
+
+```bash
+cd car-damage-inspection-using-deep-learning
+```
+```bash
+cd Carinspectproject
+```
+
+Create a virtual environment and activate
+
+```bash
+python -m venv env
+```
+```bash
+env\Scripts\activate.bat
+```
+
+Install required packages
+
+```bash
+pip install -r requirements.txt
+```
+*If you are having issue with installing packages*, [this link might help](https://www.youtube.com/watch?v=oZXNWho0x-g)
+
+Start Django server locally
+
+```bash
+python manage.py runserver
+```
 
 ## Demo
