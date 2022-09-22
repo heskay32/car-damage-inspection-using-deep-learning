@@ -116,4 +116,7 @@ Start Django server locally
 python manage.py runserver
 ```
 
-## Demo
+## App Demo with Django
+![Django App GIF](Carinspectproject/static/Demo.gif)
+
+Video to gif [tool](https://ezgif.com/)
